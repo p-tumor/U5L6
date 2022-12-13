@@ -16,6 +16,7 @@ public class BagelShop
     private Bank vendorBank;
 
     private double purchasePrice;
+    private double total;
 
     /** Creates a new BagelShop
      @param name  The name of the BagelShop
@@ -31,6 +32,7 @@ public class BagelShop
         this.bagelPrice = bagelPrice;
         this.vendorBank = vendorBank;
         purchasePrice = bagelPrice/4;
+        total = 0;
     }
 
 
@@ -135,6 +137,10 @@ public class BagelShop
     {
         vendorBank.vendorDeposit(profit);
         profit = 0;
+    }
+
+    public String receipt(){
+
     }
 
     public String toString()

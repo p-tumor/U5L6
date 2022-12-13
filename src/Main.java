@@ -69,7 +69,19 @@ public class Main {
                     System.out.println("Invalid");
                 }
             }
-            if (choice == 1)
+            String response;
+            notValid = true;
+            if (choice == 1){
+                if (notValid){
+                    System.out.println("Would you like to make a purchase or return?");
+                    response = s.nextLine();
+                    if (response.equals("purchase")){
+                        System.out.println("How many would you like?");
+                        System.out.println();
+                    }
+
+                }
+            }
         }
     }
 }

@@ -3,12 +3,14 @@ public class CreditCard
     private String accountHolder;
     private String personalPIN;
     private double balanceOwed;
+    private static int cardsMade = 0;
 
     public CreditCard(String name, String personalPIN)
     {
         accountHolder = name;
         this.personalPIN = personalPIN;
         balanceOwed = 0;
+        cardsMade++;
     }
 
     public String getAccountHolder()
@@ -20,6 +22,8 @@ public class CreditCard
     {
         return balanceOwed;
     }
+
+    public static int getCardsMade(){return cardsMade;}
 
     /** Increases balanceOwed by the amount
      *

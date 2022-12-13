@@ -1,6 +1,7 @@
 public class BankApp {
     private String menu;
     private String subMenu;
+    private String
     BagelShop shop;
     public BankApp(BagelShop shop){
         menu = "1. Make purchase/return to "+shop.getName()+".\n" +
@@ -17,12 +18,14 @@ public class BankApp {
         this.shop = shop;
     }
     public void updateMenu(){
-        menu = "1. Make purchase/return to "+shop.getName()+".\n" +
-                "2. Make a payment.\n" +
-                "3. Compare credit cards.\n" +
-                "4. Check the inventory of "+shop.getName()+".\n" +
-                "5. Deposit profits from "+shop.getName()+" into the bank.\n" +
-                "5. Exit";
+        if (CreditCard.getCardsMade() >= 2) {
+            menu = "1. Make purchase/return to " + shop.getName() + ".\n" +
+                    "2. Make a payment.\n" +
+                    "3. Compare credit cards.\n" +
+                    "4. Check the inventory of " + shop.getName() + ".\n" +
+                    "5. Deposit profits from " + shop.getName() + " into the bank.\n" +
+                    "6. Exit";
+        }
     }
 
     public String getSubMenu() {
@@ -30,6 +33,7 @@ public class BankApp {
     }
 
     public String getMenu() {
+        updateMenu();
         return menu;
     }
 }
